@@ -123,6 +123,7 @@
     NSString *timeString = [NSString stringWithFormat:@"%f", a];
     
     NSString *urlStr = [NSString stringWithFormat:@"http://client.blackbirdsport.com/bk_login?ton=%@&timeStamp=%@&userId=%@&password=%@",@"UxmfvA4NdsvLDqsP",timeString,account.text,password.text];
+    NSLog(@"urlStr=%@",urlStr);
     NSURLSessionConfiguration *defaultConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:defaultConfiguration];
     

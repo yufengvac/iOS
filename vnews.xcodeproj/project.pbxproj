@@ -82,7 +82,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D122B7C1DDEA1340036B36F /* 主页 */ = {
+		1D122B7C1DDEA1340036B36F /* tab_home */ = {
 			isa = PBXGroup;
 			children = (
 				1DF4FDF81DE3EA6400AF1415 /* RidingViewController.h */,
@@ -96,18 +96,18 @@
 				1DF4FDB11DE2DB2800AF1415 /* SettingViewController.h */,
 				1DF4FDB21DE2DB2800AF1415 /* SettingViewController.m */,
 			);
-			name = "主页";
+			name = tab_home;
 			sourceTree = "<group>";
 		};
-		1D122B8D1DDECC900036B36F /* 工具 */ = {
+		1D122B8D1DDECC900036B36F /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				1DF4FE3E1DE6CFB600AF1415 /* 图片加载 */,
+				1DF4FE3E1DE6CFB600AF1415 /* imageLoader */,
 				1DF4FE3D1DE6CFA900AF1415 /* TabBar */,
-				1DF4FE3C1DE6CF9B00AF1415 /* 颜色 */,
-				1DF4FE3B1DE69C2200AF1415 /* 对话提示框 */,
+				1DF4FE3C1DE6CF9B00AF1415 /* color */,
+				1DF4FE3B1DE69C2200AF1415 /* progress_hud */,
 			);
-			name = "工具";
+			name = utils;
 			sourceTree = "<group>";
 		};
 		1DDE53401DCAE005003AC3B3 = {
@@ -129,11 +129,11 @@
 		1DDE534B1DCAE005003AC3B3 /* vnews */ = {
 			isa = PBXGroup;
 			children = (
-				1DF4FE0A1DE5685800AF1415 /* 基类 */,
-				1DF4FE061DE564DE00AF1415 /* 登录 */,
-				1DF4FE021DE54E2B00AF1415 /* 主页 */,
-				1D122B8D1DDECC900036B36F /* 工具 */,
-				1D122B7C1DDEA1340036B36F /* 主页 */,
+				1DF4FE0A1DE5685800AF1415 /* base */,
+				1DF4FE061DE564DE00AF1415 /* login */,
+				1DF4FE021DE54E2B00AF1415 /* main */,
+				1D122B8D1DDECC900036B36F /* utils */,
+				1D122B7C1DDEA1340036B36F /* tab_home */,
 				1DDE534F1DCAE005003AC3B3 /* AppDelegate.h */,
 				1DDE53501DCAE005003AC3B3 /* AppDelegate.m */,
 				1DDE53521DCAE005003AC3B3 /* Assets.xcassets */,
@@ -153,34 +153,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1DF4FE021DE54E2B00AF1415 /* 主页 */ = {
+		1DF4FE021DE54E2B00AF1415 /* main */ = {
 			isa = PBXGroup;
 			children = (
 				1DF4FE031DE54E8900AF1415 /* HomeViewController.h */,
 				1DF4FE041DE54E8900AF1415 /* HomeViewController.m */,
 			);
-			name = "主页";
+			name = main;
 			sourceTree = "<group>";
 		};
-		1DF4FE061DE564DE00AF1415 /* 登录 */ = {
+		1DF4FE061DE564DE00AF1415 /* login */ = {
 			isa = PBXGroup;
 			children = (
 				1DF4FE071DE5659000AF1415 /* LoginViewController.h */,
 				1DF4FE081DE5659000AF1415 /* LoginViewController.m */,
 			);
-			name = "登录";
+			name = login;
 			sourceTree = "<group>";
 		};
-		1DF4FE0A1DE5685800AF1415 /* 基类 */ = {
+		1DF4FE0A1DE5685800AF1415 /* base */ = {
 			isa = PBXGroup;
 			children = (
 				1DF4FE0B1DE5686500AF1415 /* BaseViewController.h */,
 				1DF4FE0C1DE5686500AF1415 /* BaseViewController.m */,
 			);
-			name = "基类";
+			name = base;
 			sourceTree = "<group>";
 		};
-		1DF4FE3B1DE69C2200AF1415 /* 对话提示框 */ = {
+		1DF4FE3B1DE69C2200AF1415 /* progress_hud */ = {
 			isa = PBXGroup;
 			children = (
 				1DF4FE351DE69A9400AF1415 /* MBProgressHUD.h */,
@@ -188,16 +188,16 @@
 				1DF4FE381DE69BD300AF1415 /* MBProgressHUD+NJ.h */,
 				1DF4FE391DE69BD300AF1415 /* MBProgressHUD+NJ.m */,
 			);
-			name = "对话提示框";
+			name = progress_hud;
 			sourceTree = "<group>";
 		};
-		1DF4FE3C1DE6CF9B00AF1415 /* 颜色 */ = {
+		1DF4FE3C1DE6CF9B00AF1415 /* color */ = {
 			isa = PBXGroup;
 			children = (
 				1D122B8E1DDECCBB0036B36F /* UIColor+ColorChange.h */,
 				1D122B8F1DDECCBB0036B36F /* UIColor+ColorChange.m */,
 			);
-			name = "颜色";
+			name = color;
 			sourceTree = "<group>";
 		};
 		1DF4FE3D1DE6CFA900AF1415 /* TabBar */ = {
@@ -209,7 +209,7 @@
 			name = TabBar;
 			sourceTree = "<group>";
 		};
-		1DF4FE3E1DE6CFB600AF1415 /* 图片加载 */ = {
+		1DF4FE3E1DE6CFB600AF1415 /* imageLoader */ = {
 			isa = PBXGroup;
 			children = (
 				1DF4FE3F1DE6CFE100AF1415 /* AsyncImageDownloader.h */,
@@ -221,7 +221,7 @@
 				1DF4FE461DE6CFE100AF1415 /* UIImageView+OnlineImage.h */,
 				1DF4FE471DE6CFE100AF1415 /* UIImageView+OnlineImage.m */,
 			);
-			name = "图片加载";
+			name = imageLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,11 +250,12 @@
 		1DDE53411DCAE005003AC3B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = vac;
 				TargetAttributes = {
 					1DDE53481DCAE005003AC3B3 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 92J3D5S8UZ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -347,6 +348,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -369,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -394,6 +396,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -410,7 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -421,10 +424,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 92J3D5S8UZ;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vac.vnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -432,10 +438,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 92J3D5S8UZ;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vac.vnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
