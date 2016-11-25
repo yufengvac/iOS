@@ -24,10 +24,10 @@
     [self preferredStatusBarStyle];
     
     NSUserDefaults *defacult = [NSUserDefaults standardUserDefaults];
-    NSString *clientId = [defacult objectForKey:@"clientId"];
-    if (clientId!=nil) {
+    NSString *accountId = [defacult objectForKey:@"accountId"];
+    if (accountId!=nil) {
         TabbarHelper *tabbarHelper = [[TabbarHelper alloc]init];
-        tabbarHelper.accountId =[defacult objectForKey:@"accountId"];
+        tabbarHelper.accountId =accountId;
          self.window.rootViewController = [tabbarHelper getTabbarViewController];
     }else{
         self.window.rootViewController = [[HomeViewController alloc]init];

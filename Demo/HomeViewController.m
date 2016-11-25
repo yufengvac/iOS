@@ -75,7 +75,10 @@
     regisiterBtn.titleLabel.font = [UIFont systemFontOfSize:13];
     [self.view addSubview:regisiterBtn];
     
-    [self setClientId];
+    NSString *clientId = [[NSUserDefaults standardUserDefaults] objectForKey:@"clientId"];
+    if (clientId==nil) {
+        [self setClientId];
+    }
 }
 -(void)setClientId{
     NSString *urlStr = [NSString stringWithFormat:@"http://client.blackbirdsport.com/bk_setClient?version=%@&type=%@&detail=%@&code=%@&imei=%@&timeStamp=%@&channelId=%@",[SystemHelper getVersion],[SystemHelper getClientType],[NSString stringWithFormat:@"%@-%@",[SystemHelper getSystemName],[SystemHelper getSystemVersion]],@"",[SystemHelper getDeviceId],[SystemHelper getTimeStamp],[SystemHelper getChannelId]];

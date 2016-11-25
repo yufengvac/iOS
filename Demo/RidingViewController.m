@@ -18,7 +18,6 @@
 #define TOP_BTN_HEIGHT 45
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define LIGHT_BLACK_HEIGHT 50
-#define LOGO_HEIGHT 220
 #define HEAD_PORTRAIT_MARGIN 10
 #define HEAD_PORTRAIT_SIZE 70
 #define HONOR_SIZE_WIDTH  29
@@ -39,6 +38,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSInteger LOGO_HEIGHT = 220;
+   
     
     UIImageView *logo = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, LOGO_HEIGHT)];
     logo.contentMode = UIViewContentModeScaleToFill;
@@ -362,7 +364,7 @@
 }
 #pragma mark 更新界面
 -(void)updateUserInfo:(NSData *)data{
-    
+    NSInteger LOGO_HEIGHT = 220;
     
     UILabel *totalRankValue = [self.view viewWithTag:10];
     UILabel *totalScoreValue = [self.view viewWithTag:11];
