@@ -61,6 +61,7 @@
     UITextField *accountTextField = [[UITextField alloc]initWithFrame:CGRectMake(baseLeftMargin+40, baseHeight, screenWidth-baseLeftMargin*2-40, 20)];
     accountTextField.placeholder = @"请输入手机号码/邮箱";
     accountTextField.tag = 100;
+//    [self textFieldShouldBeginEditing:accountTextField];
     accountTextField.borderStyle = UITextBorderStyleNone;
     accountTextField.font = [UIFont systemFontOfSize:13];
     accountTextField.textColor = [UIColor lightGrayColor];
@@ -107,9 +108,25 @@
 -(void)back{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+//- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+//    CGFloat rects = self.view.frame.size.height - (textField.frame.origin.y + textField.frame.size.height + 216 +50);
+//    NSLog(@"aa%f",rects);
+//    if (rects <= 0) {
+//        [UIView animateWithDuration:0.3 animations:^{
+//            CGRect frame = self.view.frame;
+//            frame.origin.y = rects;
+//            self.view.frame = frame;
+//        }];
+//    }
+//    return YES;
+//}
+
+
 -(void)login{
     UITextField *account = (UITextField *)[self.view viewWithTag:100];
     UITextField *password = (UITextField *)[self.view viewWithTag:101];
+    [password resignFirstResponder];
     if ([account.text length]==0) {
         [MBProgressHUD showError:@"请输入手机号或邮箱"];
         return;
@@ -122,7 +139,9 @@
     NSTimeInterval a=[dat timeIntervalSince1970]*1000;
     NSString *timeString = [NSString stringWithFormat:@"%f", a];
     
-    NSString *urlStr = [NSString stringWithFormat:@"http://client.blackbirdsport.com/bk_login?ton=%@&timeStamp=%@&userId=%@&password=%@",@"UxmfvA4NdsvLDqsP",timeString,account.text,password.text];
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    
+    NSString *urlStr = [NSString stringWithFormat:@"http://client.blackbirdsport.com/bk_login?ton=%@&timeStamp=%@&userId=%@&password=%@",token,timeString,account.text,password.text];
     NSLog(@"urlStr=%@",urlStr);
     NSURLSessionConfiguration *defaultConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:defaultConfiguration];

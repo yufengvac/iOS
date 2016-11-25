@@ -22,11 +22,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self preferredStatusBarStyle];
+    
     NSUserDefaults *defacult = [NSUserDefaults standardUserDefaults];
-    NSString *accountId = [defacult objectForKey:@"accountId"];
-    if (accountId!=nil) {
+    NSString *clientId = [defacult objectForKey:@"clientId"];
+    if (clientId!=nil) {
         TabbarHelper *tabbarHelper = [[TabbarHelper alloc]init];
-        tabbarHelper.accountId =accountId;
+        tabbarHelper.accountId =[defacult objectForKey:@"accountId"];
          self.window.rootViewController = [tabbarHelper getTabbarViewController];
     }else{
         self.window.rootViewController = [[HomeViewController alloc]init];

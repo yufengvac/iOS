@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0254861DE80EEB003E6927 /* SystemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0254851DE80EEB003E6927 /* SystemHelper.m */; };
 		1D122B821DDEA1D30036B36F /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D122B811DDEA1D30036B36F /* EventViewController.m */; };
 		1D122B901DDECCBB0036B36F /* UIColor+ColorChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D122B8F1DDECCBB0036B36F /* UIColor+ColorChange.m */; };
 		1D57BDE01DE7ED38001C4EDA /* LevelUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D57BDDF1DE7ED38001C4EDA /* LevelUtil.m */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D0254841DE80EEB003E6927 /* SystemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemHelper.h; sourceTree = "<group>"; };
+		1D0254851DE80EEB003E6927 /* SystemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemHelper.m; sourceTree = "<group>"; };
 		1D122B801DDEA1D30036B36F /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		1D122B811DDEA1D30036B36F /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		1D122B8E1DDECCBB0036B36F /* UIColor+ColorChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorChange.h"; sourceTree = "<group>"; };
@@ -85,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0254831DE80EC0003E6927 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				1D0254841DE80EEB003E6927 /* SystemHelper.h */,
+				1D0254851DE80EEB003E6927 /* SystemHelper.m */,
+			);
+			name = system;
+			sourceTree = "<group>";
+		};
 		1D122B7C1DDEA1340036B36F /* tab_home */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +117,7 @@
 		1D122B8D1DDECC900036B36F /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				1D0254831DE80EC0003E6927 /* system */,
 				1D57BDDD1DE7ED2C001C4EDA /* level */,
 				1DF4FE3E1DE6CFB600AF1415 /* imageLoader */,
 				1DF4FE3D1DE6CFA900AF1415 /* TabBar */,
@@ -314,6 +327,7 @@
 				1D57BDE01DE7ED38001C4EDA /* LevelUtil.m in Sources */,
 				1D122B901DDECCBB0036B36F /* UIColor+ColorChange.m in Sources */,
 				1DF4FDAD1DE2DA9100AF1415 /* RankViewController.m in Sources */,
+				1D0254861DE80EEB003E6927 /* SystemHelper.m in Sources */,
 				1DF4FE4A1DE6CFE100AF1415 /* NSString+MD5.m in Sources */,
 				1DF4FE481DE6CFE100AF1415 /* AsyncImageDownloader.m in Sources */,
 				1DF4FE011DE54D7500AF1415 /* TabbarHelper.m in Sources */,

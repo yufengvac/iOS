@@ -340,7 +340,7 @@
 
 #pragma mark 从网络拉取数据
 -(void)loadUserInfo{
-    NSString *ton = @"UxmfvA4NdsvLDqsP";
+    NSString *ton = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     NSString *accountId = self.accountId;
     NSLog(@"accountId=%@",accountId);
     NSString *urlStr = [NSString stringWithFormat:@"http://client.blackbirdsport.com/bk_getUserInfo?ton=%@&friendId=%@",ton,accountId];

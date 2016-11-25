@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "LoginViewController.h"
+#import "SystemHelper.h"
 
 @interface HomeViewController ()
 
@@ -73,6 +74,38 @@
     [regisiterBtn addTarget:self action:@selector(register) forControlEvents:UIControlEventAllEvents];
     regisiterBtn.titleLabel.font = [UIFont systemFontOfSize:13];
     [self.view addSubview:regisiterBtn];
+    
+    [self setClientId];
+}
+-(void)setClientId{
+    NSString *urlStr = [NSString stringWithFormat:@"http://client.blackbirdsport.com/bk_setClient?version=%@&type=%@&detail=%@&code=%@&imei=%@&timeStamp=%@&channelId=%@",[SystemHelper getVersion],[SystemHelper getClientType],[NSString stringWithFormat:@"%@-%@",[SystemHelper getSystemName],[SystemHelper getSystemVersion]],@"",[SystemHelper getDeviceId],[SystemHelper getTimeStamp],[SystemHelper getChannelId]];
+    NSLog(@"urlStr=%@",urlStr);
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+    NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data,NSURLResponse *response,NSError *error){
+        NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"setClient结果是：%@",result);
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self parseWithData:data];
+        });
+    }];
+    [task resume];
+}
+-(void) parseWithData:(NSData *)data{
+    NSDictionary *diction = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+    NSString *status = [diction objectForKey:@"status"];
+    if (![@"ok" isEqualToString:status]) {
+        return;
+    }
+     NSDictionary *tokenDic = [diction objectForKey:@"token"];
+    NSString *clientId = [tokenDic objectForKey:@"clientId"];
+    NSString *tokenStr = [tokenDic objectForKey:@"token"];
+   
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:clientId forKey:@"clientId"];
+    [defaults setObject:tokenStr forKey:@"token"];
+    [defaults synchronize];
 }
 
 - (void)didReceiveMemoryWarning {
