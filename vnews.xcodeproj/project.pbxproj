@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D122B821DDEA1D30036B36F /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D122B811DDEA1D30036B36F /* EventViewController.m */; };
 		1D122B901DDECCBB0036B36F /* UIColor+ColorChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D122B8F1DDECCBB0036B36F /* UIColor+ColorChange.m */; };
+		1D57BDE01DE7ED38001C4EDA /* LevelUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D57BDDF1DE7ED38001C4EDA /* LevelUtil.m */; };
 		1DDE534E1DCAE005003AC3B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE534D1DCAE005003AC3B3 /* main.m */; };
 		1DDE53511DCAE005003AC3B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE53501DCAE005003AC3B3 /* AppDelegate.m */; };
 		1DDE53531DCAE005003AC3B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DDE53521DCAE005003AC3B3 /* Assets.xcassets */; };
@@ -34,6 +35,8 @@
 		1D122B811DDEA1D30036B36F /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		1D122B8E1DDECCBB0036B36F /* UIColor+ColorChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorChange.h"; sourceTree = "<group>"; };
 		1D122B8F1DDECCBB0036B36F /* UIColor+ColorChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorChange.m"; sourceTree = "<group>"; };
+		1D57BDDE1DE7ED38001C4EDA /* LevelUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelUtil.h; sourceTree = "<group>"; };
+		1D57BDDF1DE7ED38001C4EDA /* LevelUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelUtil.m; sourceTree = "<group>"; };
 		1DDE53491DCAE005003AC3B3 /* vnews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vnews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DDE534D1DCAE005003AC3B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1DDE534F1DCAE005003AC3B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,12 +105,22 @@
 		1D122B8D1DDECC900036B36F /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				1D57BDDD1DE7ED2C001C4EDA /* level */,
 				1DF4FE3E1DE6CFB600AF1415 /* imageLoader */,
 				1DF4FE3D1DE6CFA900AF1415 /* TabBar */,
 				1DF4FE3C1DE6CF9B00AF1415 /* color */,
 				1DF4FE3B1DE69C2200AF1415 /* progress_hud */,
 			);
 			name = utils;
+			sourceTree = "<group>";
+		};
+		1D57BDDD1DE7ED2C001C4EDA /* level */ = {
+			isa = PBXGroup;
+			children = (
+				1D57BDDE1DE7ED38001C4EDA /* LevelUtil.h */,
+				1D57BDDF1DE7ED38001C4EDA /* LevelUtil.m */,
+			);
+			name = level;
 			sourceTree = "<group>";
 		};
 		1DDE53401DCAE005003AC3B3 = {
@@ -298,6 +311,7 @@
 				1DF4FDB01DE2DB1300AF1415 /* TeamViewController.m in Sources */,
 				1DF4FE0D1DE5686500AF1415 /* BaseViewController.m in Sources */,
 				1DF4FE4C1DE6CFE100AF1415 /* UIImageView+OnlineImage.m in Sources */,
+				1D57BDE01DE7ED38001C4EDA /* LevelUtil.m in Sources */,
 				1D122B901DDECCBB0036B36F /* UIColor+ColorChange.m in Sources */,
 				1DF4FDAD1DE2DA9100AF1415 /* RankViewController.m in Sources */,
 				1DF4FE4A1DE6CFE100AF1415 /* NSString+MD5.m in Sources */,
@@ -426,7 +440,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 92J3D5S8UZ;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vac.vnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -440,7 +454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 92J3D5S8UZ;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vac.vnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -10,6 +10,7 @@
 #import "UIColor+ColorChange.h"
 #import "MBProgressHUD+NJ.h"
 #import "UIImageView+OnlineImage.h"
+#import "LevelUtil.h"
 
 #define BLUR_SIZE 49
 #define STATUS_HEIGHT 10
@@ -187,10 +188,12 @@
     
     UIImageView *levelImageView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-HONOR_SIZE_WIDTH*1.5,LOGO_HEIGHT+HEAD_PORTRAIT_MARGIN*2 , HONOR_SIZE_HEIGHT, HONOR_SIZE_HEIGHT)];
     levelImageView.image = [UIImage imageNamed:@"level_cainiao"];
+    levelImageView.tag = 24;
     [self.view addSubview:levelImageView];
     
     UILabel *levelText = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-HONOR_SIZE_WIDTH*1.5, LOGO_HEIGHT+HEAD_PORTRAIT_MARGIN*2.5+HONOR_SIZE_HEIGHT, HONOR_SIZE_HEIGHT, HEAD_PORTRAIT_MARGIN)];
-    levelText.text = @"菜鸟级";
+    levelText.text = @"";
+    levelText.tag = 18;
     levelText.textColor = [UIColor lightGrayColor];
     levelText.font = [UIFont systemFontOfSize:11];
     levelText.textAlignment = NSTextAlignmentCenter;
@@ -369,11 +372,13 @@
     UILabel *sign = [self.view viewWithTag:15];
     UILabel *count = [self.view viewWithTag:16];
     UILabel *credit = [self.view viewWithTag:17];
+    UILabel *levelTitle = [self.view viewWithTag:18];
     
     UIImageView *logo = [self.view viewWithTag:20];
     UIImageView *headportrait = [self.view viewWithTag:21];
     UIImageView *genderImageView = [self.view viewWithTag:22];
     UIImageView *officalImageView = [self.view viewWithTag:23];
+    UIImageView *levelImageView = [self.view viewWithTag:24];
     
     NSDictionary *jsonDirc = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
     NSString *status = [jsonDirc objectForKey:@"status"];
@@ -419,6 +424,11 @@
     officalImageView.frame =CGRectMake(2*HEAD_PORTRAIT_MARGIN+textSize.size.width, LOGO_HEIGHT+HEAD_PORTRAIT_MARGIN*1.9, 23, 13);
     genderImageView.frame =CGRectMake(3*HEAD_PORTRAIT_MARGIN+textSize.size.width+officalImageView.frame.size.width, LOGO_HEIGHT+HEAD_PORTRAIT_MARGIN*1.9,30, 13);
     age.frame = CGRectMake(3*HEAD_PORTRAIT_MARGIN+textSize.size.width+officalImageView.frame.size.width+HEAD_PORTRAIT_MARGIN*1.5,LOGO_HEIGHT+HEAD_PORTRAIT_MARGIN*1.6 , HEAD_PORTRAIT_MARGIN*2 , HEAD_PORTRAIT_MARGIN*2);
+    
+    NSString *levelStr =[userInfoDict objectForKey:@"level"];
+    NSInteger level = [levelStr integerValue];
+    levelTitle.text = [LevelUtil getLevelName:level];
+    levelImageView.image = [LevelUtil getLevelImage:level];
 }
 
 - (void)didReceiveMemoryWarning {
